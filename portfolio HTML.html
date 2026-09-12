@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aleia Lindberg — Instructional Designer</title>
+<meta name="description" content="Instructional design portfolio of Aleia Lindberg. Analysis through maintenance on a multi-module eLearning course for U.S. military veterans.">
+<meta property="og:title" content="Aleia Lindberg — Instructional Designer">
+<meta property="og:description" content="eLearning portfolio: a Bitcoin and personal finance course built for veterans, from research through publish.">
+<meta property="og:image" content="images/social-card.jpg">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS — Brick-pink palette drawn from maggielxd.com
+   ============================================================ */
+:root{
+  --bg:#FFFFFF;
+  --bg-alt:#FBF8F6;       /* faint warm off-white for bands */
+  --ink:#2D2D2D;           /* near-black body text */
+  --ink-soft:#6E6E6E;      /* secondary / caption text */
+  --rule:#E8E2DD;          /* subtle warm hairlines */
+  --accent:#C4696A;        /* brick pink / dusty rose */
+  --accent-hover:#A8514F;  /* darker pink on hover */
+  --accent-light:#F5E8E8;  /* very pale pink tint for highlights */
+
+  --sans:'DM Sans',system-ui,sans-serif;
+  --serif:'DM Serif Display',Georgia,serif;
+
+  --wide:72rem;
+  --prose:40rem;
+  --gutter:clamp(1.25rem,5vw,3rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);
+  font-size:clamp(1rem,.96rem + .2vw,1.1rem);
+  line-height:1.7;
+}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-hover)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:var(--wide);margin-inline:auto;padding-inline:var(--gutter)}
+section{padding-block:clamp(3.5rem,8vw,6rem)}
+.band{background:var(--bg-alt)}
+
+/* ---------- type ---------- */
+h1,h2,h3{margin:0;line-height:1.15}
+h1{font-family:var(--serif);font-size:clamp(2.8rem,1.6rem + 5.5vw,4.5rem);font-weight:400;letter-spacing:-.02em}
+h2{font-family:var(--serif);font-size:clamp(1.7rem,1.2rem + 2vw,2.5rem);font-weight:400}
+h3{font-family:var(--sans);font-size:1.1rem;font-weight:700;letter-spacing:.01em}
+.label{
+  font-family:var(--sans);font-size:.82rem;font-weight:600;
+  color:var(--accent);letter-spacing:.04em;text-transform:uppercase;
+  margin-bottom:.8rem;
+}
+.meta{font-size:.95rem;color:var(--ink-soft);line-height:1.55}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-in{display:flex;align-items:center;gap:1.5rem;min-height:4rem}
+.mark{margin-right:auto;display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.mark-icon{
+  width:2.4rem;height:2.4rem;border-radius:6px;
+  background:var(--accent);color:#fff;
+  display:grid;place-content:center;
+  font-family:var(--serif);font-size:1.25rem;font-weight:400;
+}
+.mark-text{font-family:var(--sans);font-weight:700;font-size:.95rem;color:var(--ink);letter-spacing:.01em}
+.nav-links{display:flex;gap:1.6rem;font-size:.92rem;font-weight:500}
+.nav-links a{color:var(--ink);text-decoration:none}
+.nav-links a:hover{color:var(--accent)}
+.nav-li-icon a{display:flex;align-items:center}
+.nav-li-icon svg{width:1.15rem;height:1.15rem;fill:var(--ink)}
+.nav-li-icon a:hover svg{fill:var(--accent)}
+@media(max-width:40rem){.nav-links:not(.nav-li-icon){display:none}}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-block;
+  font-family:var(--sans);font-size:.92rem;font-weight:600;
+  padding:.7em 1.6em;border-radius:6px;
+  background:var(--accent);color:#fff;
+  text-decoration:none;border:2px solid var(--accent);
+  transition:background .15s,color .15s;
+}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:#fff}
+.btn.outline{background:transparent;color:var(--accent)}
+.btn.outline:hover{background:var(--accent);color:#fff}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(2.5rem,6vw,5rem);padding-bottom:0}
+.hero-grid{display:grid;gap:2.5rem;align-items:center;grid-template-columns:1fr 1fr}
+@media(max-width:52rem){.hero-grid{grid-template-columns:1fr;text-align:center}}
+.hero-text h1{margin-bottom:.8rem}
+.hero-tagline{font-size:1.18rem;line-height:1.6;max-width:30rem;margin-bottom:1.5rem}
+@media(max-width:52rem){.hero-tagline{margin-inline:auto}}
+.hero-tagline strong{font-weight:700;color:var(--ink)}
+.hero-img{position:relative}
+.hero-img img{border-radius:10px;width:100%;aspect-ratio:4/5;object-fit:cover}
+.hero-img .ph{
+  display:none;aspect-ratio:4/5;border-radius:10px;
+  border:2px dashed var(--rule);
+  font-family:var(--sans);font-size:.85rem;color:var(--ink-soft);
+  padding:1.5rem;text-align:center;
+}
+.hero-img .ph b{display:block;margin-bottom:.25rem;font-weight:600}
+.hero-img.is-empty img{display:none}
+.hero-img.is-empty .ph{display:grid;place-content:center}
+
+/* ---------- featured projects ---------- */
+.projects-grid{display:grid;gap:2.5rem;grid-template-columns:1fr 1fr}
+@media(max-width:52rem){.projects-grid{grid-template-columns:1fr}}
+.project-card{
+  border-radius:10px;overflow:hidden;
+  border:1px solid var(--rule);
+  background:var(--bg);
+  display:flex;flex-direction:column;
+  transition:box-shadow .2s;
+}
+.project-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.07)}
+.project-card .card-img{position:relative;background:var(--bg-alt)}
+.project-card .card-img img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.project-card .card-img .ph{
+  display:none;aspect-ratio:16/10;
+  border-bottom:1px solid var(--rule);
+  font-family:var(--sans);font-size:.82rem;color:var(--ink-soft);
+  padding:1rem;text-align:center;
+}
+.project-card .card-img .ph b{display:block;font-weight:600;margin-bottom:.15rem}
+.project-card .card-img.is-empty img{display:none}
+.project-card .card-img.is-empty .ph{display:grid;place-content:center}
+
+.card-body{padding:1.5rem 1.5rem 2rem;flex:1;display:flex;flex-direction:column}
+.card-body .label{margin-bottom:.5rem}
+.card-body h2{font-size:clamp(1.3rem,1rem + 1vw,1.7rem);margin-bottom:.6rem}
+.card-body h3{font-family:var(--serif);font-weight:400;font-size:1.2rem;color:var(--ink);margin-bottom:.8rem}
+.card-body p{margin:0 0 1.2rem;font-size:.97rem;color:var(--ink-soft);flex:1}
+.card-body .btn{align-self:flex-start}
+
+/* ---------- testimonials ---------- */
+.testimonials{overflow:hidden}
+.test-track{
+  display:flex;gap:2rem;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:1rem;
+}
+.test-track::-webkit-scrollbar{height:4px}
+.test-track::-webkit-scrollbar-thumb{background:var(--rule);border-radius:2px}
+.test-card{
+  flex:0 0 min(85vw,32rem);
+  scroll-snap-align:start;
+  background:var(--bg);
+  border:1px solid var(--rule);
+  border-radius:10px;
+  padding:2rem;
+  display:flex;flex-direction:column;
+}
+.test-card blockquote{
+  margin:0;font-size:1rem;line-height:1.65;
+  color:var(--ink);flex:1;
+  font-style:italic;
+}
+.test-card blockquote strong{font-style:normal;font-weight:700}
+.test-card .attrib{margin-top:1.2rem;font-size:.88rem;font-weight:600;color:var(--ink-soft)}
+.test-card .attrib span{display:block;font-weight:400}
+
+/* ---------- about snippet ---------- */
+.about-grid{display:grid;gap:3rem;grid-template-columns:1fr 1.2fr;align-items:start}
+@media(max-width:52rem){.about-grid{grid-template-columns:1fr}}
+.about-text h2{margin-bottom:1rem}
+.about-text p{margin:0 0 1rem;max-width:var(--prose)}
+.about-text p strong{font-weight:700}
+.about-photos{display:grid;gap:.75rem;grid-template-columns:1fr 1fr}
+.about-photos figure{margin:0}
+.about-photos img{border-radius:8px;width:100%;aspect-ratio:1;object-fit:cover}
+.about-photos figcaption{margin-top:.35rem;font-size:.8rem;color:var(--ink-soft);text-align:center}
+.about-photos .ph{
+  display:none;aspect-ratio:1;border-radius:8px;
+  border:2px dashed var(--rule);
+  font-family:var(--sans);font-size:.82rem;color:var(--ink-soft);
+  padding:.75rem;text-align:center;
+}
+.about-photos .ph b{display:block;font-weight:600;margin-bottom:.15rem}
+.about-photos figure.is-empty img{display:none}
+.about-photos figure.is-empty .ph{display:grid;place-content:center}
+
+/* ---------- contact / cta ---------- */
+.cta{text-align:center;padding-block:clamp(3rem,7vw,5rem)}
+.cta h2{margin-bottom:.8rem}
+.cta p{max-width:28rem;margin:.5rem auto 1.5rem;color:var(--ink-soft)}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--rule);
+  padding:2rem var(--gutter);
+  display:flex;flex-wrap:wrap;gap:1rem;
+  justify-content:space-between;align-items:center;
+  font-size:.85rem;color:var(--ink-soft);
+}
+footer nav{display:flex;gap:1.2rem}
+footer a{color:var(--ink-soft);text-decoration:none}
+footer a:hover{color:var(--accent)}
+
+@media print{.nav{position:static}.btn{display:none}}
+</style>
+</head>
+
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav">
+  <div class="wrap nav-in">
+
+    <!-- EDIT: your monogram + name -->
+    <a class="mark" href="#top">
+      <span class="mark-icon">A</span>
+      <span class="mark-text">Aleia Lindberg</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- EDIT: your LinkedIn URL -->
+    <div class="nav-links nav-li-icon">
+      <a href="https://www.linkedin.com/in/EDIT" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77A1.75 1.75 0 0 0 0 1.73v20.54A1.75 1.75 0 0 0 1.77 24h20.45A1.76 1.76 0 0 0 24 22.27V1.73A1.76 1.76 0 0 0 22.22 0Z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div class="hero-text">
+        <h1>Hi, I'm Aleia!</h1>
+        <p class="hero-tagline">
+          I transform <strong>research into learning experiences</strong> by designing eLearning courses from <strong>analysis to publish</strong> — for audiences who didn't ask to be in a classroom.
+        </p>
+        <a class="btn" href="#about">Learn more about me</a>
+      </div>
+
+      <div class="hero-img">
+        <!-- EDIT: drop your headshot here -->
+        <img src="images/headshot.jpg" alt="Aleia Lindberg">
+        <span class="ph"><b>images/headshot.jpg</b>portrait photo · 800 × 1000</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FEATURED PROJECTS ============================ -->
+<section id="portfolio" class="band">
+  <div class="wrap">
+    <div class="projects-grid">
+
+      <!-- ---- Project 1: eLearning ---- -->
+      <div class="project-card">
+        <div class="card-img">
+          <img src="images/project-elearning.jpg" alt="Operation Bitcoin course screen in LearnWorlds">
+          <span class="ph"><b>images/project-elearning.jpg</b>course screenshot · 1600 × 1000</span>
+        </div>
+        <div class="card-body">
+          <p class="label">Featured eLearning Project</p>
+          <h2>Operation Bitcoin</h2>
+          <h3>Can you explain Bitcoin to a skeptic?</h3>
+          <p>A <strong>multi-module eLearning course</strong> built for U.S. military veterans, designed to cut through skepticism with evidence-backed content and a military operations-order structure.</p>
+          <a class="btn" href="case-study.html">View Case Study</a>
+        </div>
+      </div>
+
+      <!-- ---- Project 2: EDIT or remove ---- -->
+      <div class="project-card">
+        <div class="card-img">
+          <img src="images/project-two.jpg" alt="EDIT — second project screenshot">
+          <span class="ph"><b>images/project-two.jpg</b>screenshot · 1600 × 1000</span>
+        </div>
+        <div class="card-body">
+          <p class="label">EDIT — Featured Project</p>
+          <h2>EDIT — Project Title</h2>
+          <h3>EDIT — subtitle or question hook</h3>
+          <p>EDIT — one or two sentences describing what this project was and what you made. If you only have Operation Bitcoin, delete this card and change <code>.projects-grid</code> to a single column.</p>
+          <a class="btn outline" href="#">View Case Study</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ RESUME ============================ -->
+<section style="text-align:center">
+  <div class="wrap">
+    <h2>Want the full picture?</h2>
+    <p class="meta" style="max-width:26rem;margin:.6rem auto 1.5rem">Download my résumé for a complete look at my skills, education, and experience.</p>
+    <!-- EDIT: drop resume.pdf in your repo root -->
+    <a class="btn outline" href="resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIALS ============================ -->
+<section>
+  <div class="wrap">
+    <p class="label">Testimonials</p>
+
+    <div class="test-track">
+
+      <!-- EDIT: replace these with real quotes, or cut the section. -->
+      <div class="test-card">
+        <blockquote>"EDIT — a quote from Gabe, a professor, a collaborator, or a classmate about working with you. <strong>Bold the key phrase</strong> the way Maggie's site does."</blockquote>
+        <p class="attrib">EDIT — Name<span>EDIT — Title or relationship</span></p>
+      </div>
+
+      <div class="test-card">
+        <blockquote>"EDIT — second testimonial. If you don't have testimonials yet, delete this whole section — an empty carousel hurts more than no carousel."</blockquote>
+        <p class="attrib">EDIT — Name<span>EDIT — Title or relationship</span></p>
+      </div>
+
+      <div class="test-card">
+        <blockquote>"EDIT — third testimonial."</blockquote>
+        <p class="attrib">EDIT — Name<span>EDIT — Title or relationship</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ABOUT ============================ -->
+<section id="about" class="band">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <div class="about-text">
+        <h2>More about me…</h2>
+
+        <!-- EDIT: write this section in your own voice, mirroring Maggie's bold-keyword approach. -->
+        <p>I'm a senior at <strong>Asbury University</strong> finishing a degree in instructional design — and I've been doing the job for real since my sophomore year. My current project is a multi-module Bitcoin and personal finance course built for a nonprofit client, where I own every phase: <strong>audience analysis, learning objectives, storyboards, visual assets, build, and publish</strong>.</p>
+
+        <p>I taught myself to work at the speed of a small team by building a <strong>custom AI research workflow</strong>. I set up a dedicated Claude project, loaded it with the client's source material, and wrote skills that hold every draft to the project's own standards — terminology rules, citation requirements, and a gate that a draft has to clear before it reaches the stakeholder. It does not write the course; it <strong>pressure-tests what I write</strong>.</p>
+
+        <p>My toolkit: <strong>Articulate Rise 360</strong> for the build, <strong>LearnWorlds</strong> for delivery, <strong>Adobe Firefly</strong> for original imagery, and <strong>Canva</strong> for supporting graphics. I care about <strong>accuracy, accessibility,</strong> and making content that respects the learner's time.</p>
+
+        <p>EDIT — add a personal paragraph here: hobbies, what drives you, what you're looking for next. Make it yours.</p>
+      </div>
+
+      <div class="about-photos">
+        <!-- EDIT: 4 square-ish personal photos, or delete this grid -->
+        <figure>
+          <img src="images/about-1.jpg" alt="EDIT">
+          <span class="ph"><b>about-1.jpg</b>square photo</span>
+        </figure>
+        <figure>
+          <img src="images/about-2.jpg" alt="EDIT">
+          <span class="ph"><b>about-2.jpg</b>square photo</span>
+        </figure>
+        <figure>
+          <img src="images/about-3.jpg" alt="EDIT">
+          <span class="ph"><b>about-3.jpg</b>square photo</span>
+        </figure>
+        <figure>
+          <img src="images/about-4.jpg" alt="EDIT">
+          <span class="ph"><b>about-4.jpg</b>square photo</span>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT CTA ============================ -->
+<section id="contact" class="cta">
+  <div class="wrap">
+    <h2>Let's connect</h2>
+    <p>I'm looking for instructional design roles where I can own the build from analysis through publish. Drop me a line.</p>
+    <!-- EDIT: your email -->
+    <a class="btn" href="mailto:you@example.com">Get in touch</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <span>© <span id="yr">2026</span> Aleia Lindberg</span>
+  <nav>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <!-- EDIT: your LinkedIn -->
+    <a href="https://www.linkedin.com/in/EDIT" target="_blank" rel="noopener">LinkedIn</a>
+  </nav>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Show placeholder frames when images are missing
+  document.querySelectorAll('.hero-img img, .card-img img, .about-photos img').forEach(function(img){
+    var mark = function(){ img.closest('.hero-img,.card-img,figure').classList.add('is-empty'); };
+    img.addEventListener('error', mark);
+    if(img.complete && img.naturalWidth === 0) mark();
+  });
+</script>
+</body>
+</html>
